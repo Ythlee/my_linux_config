@@ -157,7 +157,6 @@ noremap <silent> <LEADER>o za
 noremap \g :term lazygit<CR>
 noremap <c-g> :term lazygit<CR>
 
-
 " ===
 " === Cursor Movement
 " ===
@@ -413,7 +412,7 @@ Plug 'fatih/vim-go' , { 'for': ['go', 'vim-plug'], 'tag': '*' }
 " Python
 Plug 'tmhedberg/SimpylFold', { 'for' :['python', 'vim-plug'] }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
+"Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
 "Plug 'vim-scripts/indentpython.vim', { 'for' :['python', 'vim-plug'] }
 "Plug 'plytophogy/vim-virtualenv', { 'for' :['python', 'vim-plug'] }
 Plug 'tweekmonster/braceless.vim'
@@ -478,6 +477,11 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'kana/vim-textobj-user'
 Plug 'roxma/nvim-yarp'
 Plug 'rbgrouleff/bclose.vim' " For ranger.vim
+
+
+" man wen dang
+Plug 'vim-utils/vim-man'
+
 
 call plug#end()
 
@@ -546,7 +550,7 @@ let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_preview_win_floating = 1
 autocmd BufWritePost * GitGutter
 nnoremap <LEADER>gf :GitGutterFold<CR>
-nnoremap H :GitGutterPreviewHunk<CR>
+nnoremap <C-H> :GitGutterPreviewHunk<CR>
 nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
 nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 
@@ -611,6 +615,7 @@ let g:ale_cpp_ccls_init_options = {
 let g:ale_c_gcc_executable = '/usr/bin/gcc'
 "let g:ale_c_gcc_options="-Wall -O2"
 
+noremap <LEADER>oc :ALEDisable<CR> :CocDisable<CR>
 
 " ===
 " === MarkdownPreview
@@ -792,7 +797,7 @@ noremap <LEADER>f :F  %<left><left>
 " ===
 " === vim-calc
 " ===
-noremap <LEADER>a :call Calc()<CR>
+"noremap <LEADER>a :call Calc()<CR>
 " Testing
 "if !empty(glob('~/Github/vim-calc/vim-calc.vim'))
 "source ~/Github/vim-calc/vim-calc.vim
@@ -884,14 +889,14 @@ let g:calendar_google_task = 1
 augroup calendar-mappings
 	autocmd!
 	" diamond cursor
-	autocmd FileType calendar nmap <buffer> u <Plug>(calendar_up)
-	autocmd FileType calendar nmap <buffer> n <Plug>(calendar_left)
-	autocmd FileType calendar nmap <buffer> e <Plug>(calendar_down)
-	autocmd FileType calendar nmap <buffer> i <Plug>(calendar_right)
-	autocmd FileType calendar nmap <buffer> <c-u> <Plug>(calendar_move_up)
-	autocmd FileType calendar nmap <buffer> <c-n> <Plug>(calendar_move_left)
-	autocmd FileType calendar nmap <buffer> <c-e> <Plug>(calendar_move_down)
-	autocmd FileType calendar nmap <buffer> <c-i> <Plug>(calendar_move_right)
+	autocmd FileType calendar nmap <buffer> i <Plug>(calendar_up)
+	autocmd FileType calendar nmap <buffer> j <Plug>(calendar_left)
+	autocmd FileType calendar nmap <buffer> k <Plug>(calendar_down)
+	autocmd FileType calendar nmap <buffer> l <Plug>(calendar_right)
+	autocmd FileType calendar nmap <buffer> <c-i> <Plug>(calendar_move_up)
+	autocmd FileType calendar nmap <buffer> <c-j> <Plug>(calendar_move_left)
+	autocmd FileType calendar nmap <buffer> <c-k> <Plug>(calendar_move_down)
+	autocmd FileType calendar nmap <buffer> <c-l> <Plug>(calendar_move_right)
 	autocmd FileType calendar nmap <buffer> k <Plug>(calendar_start_insert)
 	autocmd FileType calendar nmap <buffer> K <Plug>(calendar_start_insert_head)
 	" unmap <C-n>, <C-p> for other plugins
@@ -940,6 +945,12 @@ let g:go_highlight_variable_declarations     = 0
 " === AutoFormat
 " ===
 nnoremap \f :Autoformat<CR>
+let g:formatdef_allman = '"astyle --style=allman --pad-oper"'
+let g:formatters_cpp = ['allman']
+let g:formatters_c = ['allman']
+let g:formatter_yapf_style = 'pep8'
+
+
 
 " ===
 " === OmniSharp
@@ -1091,6 +1102,14 @@ nmap ga <Plug>(EasyAlign)
 " ===
 autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 
+
+
+" ===
+" === vim-man
+" ===
+map man <Plug>(Vman)
+map m2 :Vman 2 
+map m3 :Vman 3 
 
 " ===================== End of Plugin Settings =====================
 
