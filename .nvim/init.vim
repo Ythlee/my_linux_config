@@ -78,7 +78,7 @@ if has('persistent_undo')
 	set undofile
 	set undodir=~/.config/nvim/tmp/undo,.
 endif
-"set colorcolumn=80
+set colorcolumn=80
 set updatetime=1000
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -338,18 +338,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 
 
-" Testing my own plugin
-"Plug 'theniceboy/vim-calc'
-
 " Pretty Dress
 Plug 'theniceboy/eleline.vim'
 Plug 'bling/vim-bufferline'
-"Plug 'liuchengxu/space-vim-theme'
-"Plug 'morhetz/gruvbox'
-"Plug 'ayu-theme/ayu-vim'
-"Plug 'rakr/vim-one'
-"Plug 'mhartington/oceanic-next'
-"Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'ajmwagar/vim-deus'
 "Plug 'connorholyday/vim-snazzy'
 
@@ -361,9 +352,6 @@ Plug 'chrisbra/Colorizer' " Show colors with :ColorHighlight
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf.vim'
-"Plug 'yuki-ycino/fzf-preview.vim'
-"Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
-"Plug 'junegunn/fzf'
 Plug 'francoiscabrol/ranger.vim'
 
 " Taglist
@@ -392,10 +380,6 @@ Plug 'airblade/vim-gitgutter'
 " Tex
 Plug 'lervag/vimtex'
 
-" CSharp
-Plug 'OmniSharp/omnisharp-vim'
-Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] } " omnisharp-vim dependency
-
 " HTML, CSS, JavaScript, PHP, JSON, etc.
 Plug 'elzr/vim-json'
 Plug 'hail2u/vim-css3-syntax', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
@@ -406,8 +390,6 @@ Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['vim-plug', 'php', 'html', 'javascrip
 Plug 'jelera/vim-javascript-syntax', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
 Plug 'jaxbot/browserlink.vim'
 
-" Go
-Plug 'fatih/vim-go' , { 'for': ['go', 'vim-plug'], 'tag': '*' }
 
 " Python
 Plug 'tmhedberg/SimpylFold', { 'for' :['python', 'vim-plug'] }
@@ -482,6 +464,7 @@ Plug 'rbgrouleff/bclose.vim' " For ranger.vim
 " man wen dang
 Plug 'vim-utils/vim-man'
 
+Plug 'ianva/vim-youdao-translater'
 
 call plug#end()
 
@@ -538,6 +521,8 @@ let g:airline_powerline_fonts = 0
 noremap tt :NERDTreeToggle<CR>
 
 let NERDTreeMapOpenSplit = "a"
+let NERDTreeMapOpenVSplit = "L"
+let NERDTreeMapOpenInTab = "T"
 let NERDTreeMapMenu = ","
 let NERDTreeMapToggleHidden = "zh"
 
@@ -1037,8 +1022,8 @@ let g:colorizer_syntax = 1
 let g:EasyMotion_do_shade = 0
 let g:EasyMotion_smartcase = 1
 " 'f{char} to move to {char}
-map f <Plug>(easymotion-bd-f)
-nmap f <Plug>(easymotion-overwin-f)
+"map f <Plug>(easymotion-bd-f)
+"nmap f <Plug>(easymotion-overwin-f)
 map \; <Plug>(easymotion-prefix)
 " 's{char}{char} to move to {char}{char}
 "nmap 's <Plug>(easymotion-overwin-f2)
@@ -1111,6 +1096,12 @@ map man <Plug>(Vman)
 map m2 :Vman 2 
 map m3 :Vman 3 
 
+" ===
+" === youdao
+" ===
+vnoremap <leader>fan :<C-u>Ydv<CR>
+nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+noremap <leader>yd :<C-u>Yde<CR>
 " ===================== End of Plugin Settings =====================
 
 " ===

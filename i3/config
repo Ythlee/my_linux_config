@@ -29,9 +29,10 @@ font pango:monospace 12
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-#exec_always --no-startup-id /$HOME/.config/i3/polybar.sh
+exec_always --no-startup-id /$HOME/.config/i3/polybar.sh
 #exec_always --no-startup-id ~/.screenlayout/yangcan.sh
 exec_always xmodmap ~/.xmodmap
+exec_always nohup /usr/lib/gsd-xsettings > /dev/null 2>&1 &
 exec_always variety
 exec_always compton
 exec_always fcitx
@@ -190,8 +191,8 @@ new_window 1pixel
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
+#bar {
+#        status_command i3status
 	#	output eDP1  #在主显示器显示
 	#	i3bar_command i3bar -t
 	#	height 30
@@ -217,7 +218,7 @@ bar {
     #	    urgent_workspace   #990000 #11111100 #FFFFFF
     #	    binding_mode       #990000 #99000000 #FFFFFF
     #	}
-}
+#}
 
 # zeng jia bian ju
  gaps inner 10
