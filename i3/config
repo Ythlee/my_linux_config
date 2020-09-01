@@ -29,12 +29,12 @@ font pango:monospace 12
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-exec_always --no-startup-id /$HOME/.config/i3/polybar.sh
+#exec_always --no-startup-id /$HOME/.config/i3/polybar.sh
 #exec_always --no-startup-id ~/.screenlayout/yangcan.sh
 exec_always xmodmap ~/.xmodmap
-exec_always nohup /usr/lib/gsd-xsettings > /dev/null 2>&1 &
+#exec_always nohup /usr/lib/gsd-xsettings > /dev/null 2>&1 &
 exec_always variety
-exec_always compton
+exec_always picom
 exec_always fcitx
 
 
@@ -191,34 +191,40 @@ new_window 1pixel
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#        status_command i3status
-	#	output eDP1  #在主显示器显示
+bar {
+     #   status_command i3status -c ~/.config/i3status/config
+    #    status_command i3blocks -c ~/.config/i3/i3status.toml
+		output primary
+		output HDMI2
+	#	output DP-1
+		status_command /bin/i3status-rs ~/.config/i3status/i3status.toml
+		# font pango:DejaVu Sans Mono, FontAwesome 14
+		font pango:DejaVu Sans Mono Nerd Font,FontAwesome 14
+	#	output HDMI1
+	#	output eDP-1  #在主显示器显示
 	#	i3bar_command i3bar -t
 	#	height 30
 	#	#禁止systemtray
 	#	tray_output none
     #	# 显示位置top/bottom
-    #	position bottom
+    	position bottom
+    #	position top
     #	# 是否隐藏
     #	# mode hide
     #	# 拆解工作区名（隐藏前面的1:2:3:……）
     #	strip_workspace_numbers yes
     #	# 定义分隔符∥
     #	separator_symbol " | "
-
-    #	colors {
-    #	    background #10101000
-    #	    statusline #FFFFFF
-    #	    separator  #3399FF
-    #	    # 工作区颜色         边框    背景    文字
-    #	    focused_workspace  #3297FD #11111100 #FFFFFF
-    #	    active_workspace   #FFFFFF #FFFFFF00 #FFFFFF
-    #	    inactive_workspace #111111 #11111100 #FFFFFF
-    #	    urgent_workspace   #990000 #11111100 #FFFFFF
-    #	    binding_mode       #990000 #99000000 #FFFFFF
-    #	}
-#}
+		colors {
+			separator #666666
+			background #222222
+			statusline #dddddd
+			focused_workspace #0088CC #0088CC #ffffff
+			active_workspace #333333 #333333 #ffffff
+			inactive_workspace #333333 #333333 #888888
+			urgent_workspace #2f343a #900000 #ffffff
+    }
+}
 
 # zeng jia bian ju
  gaps inner 10
