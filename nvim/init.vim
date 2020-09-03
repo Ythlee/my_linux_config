@@ -21,12 +21,17 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
 " ====================
 " === Editor Setup ===
 " ====================
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
+
+
+
+
 " ===
 " === System
 " ===
@@ -1102,7 +1107,7 @@ map m3 :Vman 3
 " === youdao
 " ===
 vnoremap <leader>fan :<C-u>Ydv<CR>
-nnoremap <silent> <C-c> :<C-u>Ydc<CR>
+nnoremap <silent> <C-T> :<C-u>Ydc<CR>
 noremap <leader>yd :<C-u>Yde<CR>
 " ===================== End of Plugin Settings =====================
 
