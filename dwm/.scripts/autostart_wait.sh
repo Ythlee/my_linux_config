@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sleep 10
-variety &
-xmodmap ~/.xmodmap &
+sleep 8
+#variety &
 fcitx &
+sleep 1
+xmodmap ~/.xmodmap &
