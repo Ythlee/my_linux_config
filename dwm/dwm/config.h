@@ -82,7 +82,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "chromium", NULL };
 
 static const char *upvol[]   = { "/home/yangcan/.scripts/vol-up.sh",  NULL };
@@ -92,7 +92,7 @@ static const char *mutevol[] = { "/home/yangcan/.scripts/vol-toggle.sh",  NULL }
 static const char *wpcmd[]  = { "/home/yangcan/.scripts/wp-change.sh", NULL };
 static const char *sktogglecmd[]  = { "/home/yangcan/.scripts/sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "-g", "80x24", NULL };
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
 static const char *setcolemakcmd[]  = { "/home/yangcan/.scripts/setxmodmap-colemak.sh", NULL };
 static const char *setqwertycmd[]  = { "/home/yangcan/.scripts/setxmodmap-qwerty.sh", NULL };
