@@ -52,7 +52,7 @@ set relativenumber
 set cursorline
 set hidden
 set noexpandtab
-set tabstop=2
+set tabstop=4
 set shiftwidth=2
 set softtabstop=2
 set autoindent
@@ -614,7 +614,7 @@ let g:gitgutter_sign_removed_first_line = '▔'
 let g:gitgutter_sign_modified_removed = '▒'
 " autocmd BufWritePost * GitGutter
 nnoremap <LEADER>gf :GitGutterFold<CR>
-nnoremap G :GitGutterPreviewHunk<CR>
+nnoremap <LEADER>G :GitGutterPreviewHunk<CR>
 nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
 nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 
@@ -1322,6 +1322,7 @@ noremap <c-y> :NR<CR>
 nnoremap aj :AnyJump<CR>
 let g:any_jump_window_width_ratio  = 0.8
 let g:any_jump_window_height_ratio = 0.9
+let g:any_jump_disable_default_keybindings = 1
 "
 
 " ===

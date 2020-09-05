@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 8
+sleep 2
 #variety &
 fcitx &
 sleep 1
