@@ -210,8 +210,8 @@ static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NUL
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
 	{ Mod1Mask|ControlMask, XK_l,           externalpipe,   {.v = openurlcmd } },
-	{ Mod1Mask,             XK_y,           externalpipe,   {.v = copyurlcmd } },
-	{ Mod1Mask,             XK_c,           externalpipe,   {.v = copyoutput } },
+	{ Mod1Mask|ControlMask, XK_y,           externalpipe,   {.v = copyurlcmd } },
+	{ Mod1Mask|ControlMask, XK_v,           externalpipe,   {.v = copyoutput } },
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
