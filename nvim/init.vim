@@ -52,7 +52,7 @@ set relativenumber
 set cursorline
 set hidden
 set noexpandtab
-set tabstop=4
+set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set autoindent
@@ -417,8 +417,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'kevinhwang91/rnvimr'
 Plug 'airblade/vim-rooter'
-Plug 'pechorin/any-jump.vim'
-
+"Plug 'pechorin/any-jump.vim'
 
 " Taglist
 Plug 'liuchengxu/vista.vim'
@@ -615,7 +614,7 @@ let g:gitgutter_sign_removed_first_line = '▔'
 let g:gitgutter_sign_modified_removed = '▒'
 " autocmd BufWritePost * GitGutter
 nnoremap <LEADER>gf :GitGutterFold<CR>
-nnoremap <LEADER>G :GitGutterPreviewHunk<CR>
+nnoremap H :GitGutterPreviewHunk<CR>
 nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
 nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 
@@ -634,7 +633,6 @@ let g:coc_global_extensions = [
 	\ 'coc-json',
 	\ 'coc-lists',
 	\ 'coc-prettier',
-	\ 'coc-pyright',
 	\ 'coc-python',
 	\ 'coc-snippets',
 	\ 'coc-sourcekit',
@@ -1320,10 +1318,9 @@ noremap <c-y> :NR<CR>
 " ===
 " === any-jump
 " ===
-nnoremap aj :AnyJump<CR>
-let g:any_jump_window_width_ratio  = 0.8
-let g:any_jump_window_height_ratio = 0.9
-let g:any_jump_disable_default_keybindings = 1
+"nnoremap j :AnyJump<CR>
+"let g:any_jump_window_width_ratio  = 0.8
+"let g:any_jump_window_height_ratio = 0.9
 "
 
 " ===
