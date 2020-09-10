@@ -102,9 +102,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+alias ra="ranger"
 alias s="screenfetch"
 alias po="proxychains"
 alias lg="lazygit"
+alias sudo="sudo -E"
+alias c="clear"
+alias minicom="sudo minicom"
+alias dnw="sudo dnw"
+alias com="sudo picocom -b 115200 /dev/ttyUSB0"
+alias conf="vim ~/.config/nvim/init.vim"
 
 
 
@@ -113,3 +120,11 @@ source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighti
 source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/vi.zsh
 
+
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
