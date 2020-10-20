@@ -30,7 +30,7 @@ if empty(glob('~/.config/nvim/_machine_specific.vim'))
 	let has_machine_specific_file = 0
 	silent! exec "!cp ~/.config/nvim/default_configs/_machine_specific_default.vim ~/.config/nvim/_machine_specific.vim"
 endif
-source $XDG_CONFIG_HOME/nvim/_machine_specific.vim
+source ~/.config/nvim/_machine_specific.vim
 
 
 " ====================
@@ -218,7 +218,7 @@ noremap <C-U> 5<C-y>
 noremap <C-E> 5<C-e>
 
 
-source $XDG_CONFIG_HOME/nvim/cursor.vim
+source ~/.config/nvim/cursor.vim
 
 " ===
 " === Insert Mode Cursor Movement
@@ -301,7 +301,7 @@ noremap tmi :+tabmove<CR>
 " === Markdown Settings
 " ===
 " Snippets
-source $XDG_CONFIG_HOME/nvim/md-snippets.vim
+source ~/.config/nvim/md-snippets.vim
 " auto spell
 autocmd BufRead,BufNewFile *.md setlocal spell
 
@@ -793,10 +793,10 @@ let g:Lf_PreviewCode = 1
 let g:Lf_ShowHidden = 1
 let g:Lf_ShowDevIcons = 1
 let g:Lf_CommandMap = {
-			\   '<C-k>': ['<C-u>'],
-			\   '<C-j>': ['<C-e>'],
-			\   '<C-]>': ['<C-v>'],
-			\   '<C-p>': ['<C-n>'],
+			\   '<C-k>': ['<C-i>'],
+			\   '<C-j>': ['<C-k>'],
+			\   '<C-]>': ['<C-l>'],
+			\   '<C-p>': ['<C-v>'],
 			\}
 let g:Lf_UseVersionControlTool = 0
 let g:Lf_IgnoreCurrentBufferName = 1
